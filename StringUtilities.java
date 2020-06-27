@@ -5,7 +5,7 @@ public class StringUtilities {
      * @return `input`
      */
     public String returnInput(String input) {
-        return null;
+        return input;
     }
 
     /**
@@ -14,7 +14,7 @@ public class StringUtilities {
      * @return the concatenation of `baseValue` and `valueToBeAdded`
      */
     public String concatenate(String baseValue, String valueToBeAdded) {
-        return null;
+        return baseValue + valueToBeAdded;
     }
 
     /**
@@ -30,7 +30,12 @@ public class StringUtilities {
      * @return middle character of `word`
      */
     public Character getMiddleCharacter(String word) {
-        return null;
+        int length = word.length();
+        if(length % 2 == 0)
+        return word.charAt(length/2 -1);
+        else
+        return word.charAt(length/2);
+        
     }
 
     /**
@@ -39,7 +44,12 @@ public class StringUtilities {
      * @return `value` with char of value `charToRemove` removed
      */
     public String removeCharacter(String value, Character charToRemove) {
-        return null;
+        String result = value;
+        for(int i = 0; i < value.length();i++){
+            if(value.charAt(i) == charToRemove)
+                result = result.substring(0,i) + result.substring(i+1);
+        }
+        return result;
     }
 
     /**
