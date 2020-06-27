@@ -22,7 +22,14 @@ public class StringUtilities {
      * @return identical string with characters in opposite order
      */
     public String reverse(String valueToBeReversed) {
-        return null;
+        if(valueToBeReversed == null)
+        return valueToBeReversed;
+        String output = "";
+        for(int i = valueToBeReversed.length()-1; i >=0; i--){
+            output += valueToBeReversed.charAt(i);
+        }
+        return output;
+        
     }
 
     /**
@@ -57,6 +64,13 @@ public class StringUtilities {
      * @return last `word` in sentence
      */
     public String getLastWord(String sentence) {
-        return null;
+        int l = sentence.length()-1;
+        String result = "";
+        while(Character.isWhitespace(sentence.charAt(l)) != true && l >= 0){
+            result = result + sentence.charAt(l);
+            l--;
+        }
+        String returnString = reverse(result);
+        return returnString;
     }
 }
